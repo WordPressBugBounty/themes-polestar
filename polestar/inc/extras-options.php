@@ -110,7 +110,6 @@ function polestar_about_page( $about ) {
 		'woocommerce',
 		'page-builder',
 		'support',
-		'github',
 	);
 
 	return $about;

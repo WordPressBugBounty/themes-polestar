@@ -1,4 +1,4 @@
-# Copyright (C) 2024 polestar
+# Copyright (C) 2025 polestar
 # This file is distributed under the same license as the polestar package.
 msgid ""
 msgstr ""
@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Puro <support@purothemes.com>\n"
 "Language-Team: Puro <support@purothemes.com>\n"
 "X-Poedit-Basepath: ..\n"
@@ -31,18 +31,6 @@ msgstr ""
 
 #: admin/about/page-customize.php:3
 msgid "Polestar is easy to setup and customize, get started in the %sWordPress Customizer%s."
-msgstr ""
-
-#: admin/about/page-github.php:1
-msgid "Actively Developed on Github"
-msgstr ""
-
-#: admin/about/page-github.php:4
-msgid "Polestar is actively %sdeveloped on Github%s."
-msgstr ""
-
-#: admin/about/page-github.php:5
-msgid "You can follow commits, open issues and make contributions yourself."
 msgstr ""
 
 #: admin/about/page-page-builder.php:1
@@ -1071,71 +1059,71 @@ msgstr ""
 msgid "Close Quick View modal window"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:52
+#: woocommerce/single-product-reviews.php:51
 msgid "There are no reviews yet."
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:63
+#: woocommerce/single-product-reviews.php:61
 msgid "Add a review"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:63
+#: woocommerce/single-product-reviews.php:61
 msgid "Be the first to review &ldquo;%s&rdquo;"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:65
+#: woocommerce/single-product-reviews.php:62
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:69
+#: woocommerce/single-product-reviews.php:66
 msgid "Submit"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:77
+#: woocommerce/single-product-reviews.php:74
 msgid "Name"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:83
+#: woocommerce/single-product-reviews.php:81
 msgid "Email"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:108
+#: woocommerce/single-product-reviews.php:106
 msgid "You must be %1$slogged in%2$s to post a review."
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:112
+#: woocommerce/single-product-reviews.php:110
 msgid "Your rating"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:113
+#: woocommerce/single-product-reviews.php:111
 msgid "Rate&hellip;"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:114
+#: woocommerce/single-product-reviews.php:112
 msgid "Perfect"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:115
+#: woocommerce/single-product-reviews.php:113
 msgid "Good"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:116
+#: woocommerce/single-product-reviews.php:114
 msgid "Average"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:117
+#: woocommerce/single-product-reviews.php:115
 msgid "Not that bad"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:118
+#: woocommerce/single-product-reviews.php:116
 msgid "Very poor"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:122
+#: woocommerce/single-product-reviews.php:120
 msgid "Your review"
 msgstr ""
 
-#: woocommerce/single-product-reviews.php:129
+#: woocommerce/single-product-reviews.php:127
 msgid "Only logged in customers who have purchased this product may leave a review."
 msgstr ""
 
@@ -1147,7 +1135,7 @@ msgstr ""
 msgid "verified owner"
 msgstr ""
 
-#: woocommerce/single-product/up-sells.php:17
+#: woocommerce/single-product/up-sells.php:19
 msgid "You may also like"
 msgstr ""
 

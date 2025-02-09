@@ -4,7 +4,7 @@ Contributors: Puro
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Tested up to: 6.5
+Tested up to: 6.7
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -151,6 +151,11 @@ Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0
 [Source](https://github.com/TGMPA/TGM-Plugin-Activation)
 
 == Changelog ==
+
+= 1.10.2 - 09 February 2025 =
+* WooCommerce: Updated upsell template.
+* WooCommerce: Updated single product reviews template.
+* Updated Tested up to tag.
 
 = 1.10.1 - 24 March 2024 =
 * WooCommerce: Removed Edit account form.
