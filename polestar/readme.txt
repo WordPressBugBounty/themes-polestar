@@ -152,6 +152,9 @@ Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0
 
 == Changelog ==
 
+= 1.10.3 - 13 April 2025 =
+* WooCommerce: Removed Single Product Review template to streamline customization.
+
 = 1.10.2 - 09 February 2025 =
 * WooCommerce: Updated upsell template.
 * WooCommerce: Updated single product reviews template.

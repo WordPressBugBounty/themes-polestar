@@ -1,5 +1,5 @@
 /*!
-Version: 1.10.2
+Version: 1.10.3
 */
 /*--------------------------------------------------------------
 # Layout
@@ -901,6 +901,8 @@ input.button.added:after,
     margin-bottom: 26px; }
     .woocommerce .product #tab-description p:only-of-type, .woocommerce .product #tab-description p:last-of-type {
       margin-bottom: 0; }
+  .woocommerce .product .woocommerce-Reviews .woocommerce-Reviews-title {
+    display: none; }
   .woocommerce .product .woocommerce-Reviews .woocommerce-noreviews {
     font-size: 14px;
     margin-bottom: 16px; }

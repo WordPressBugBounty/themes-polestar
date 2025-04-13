@@ -109,6 +109,15 @@ function polestar_woocommerce_pagination_args( $array ) {
 add_filter( 'woocommerce_pagination_args', 'polestar_woocommerce_pagination_args', 10, 1 );
 
 /**
+ * Remove the reviews title from the single product reviews.
+ */
+function polestar_custom_woocommerce_reviews_title( $reviews_title, $count, $product ) {
+    // Return an empty string to remove the title
+    return '';
+}
+add_filter( 'woocommerce_reviews_title', 'polestar_custom_woocommerce_reviews_title', 10, 3 );
+
+/**
  * Change the gallery thumbnail image size.
  * @link https://github.com/woocommerce/woocommerce/wiki/Customizing-image-sizes-in-3.3-
  */
