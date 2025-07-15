@@ -8,7 +8,7 @@
  * @license GPL 2.0 
  */
 
-define( 'PURO_THEME_VERSION', '1.10.3' );
+define( 'PURO_THEME_VERSION', '1.10.4' );
 define( 'PURO_THEME_JS_PREFIX', '.min' );
 define( 'PURO_THEME_CSS_PREFIX', '.min' );
 
