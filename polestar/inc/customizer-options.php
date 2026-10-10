@@ -311,8 +311,21 @@ function polestar_theme_options() {
 		'label'       => esc_html__( 'Post Categories', 'polestar' ),
 		'section'     => $section,
 		'type'        => 'checkbox',
-		'description' => esc_html__( 'Display the post categories on blog, archive and single post pages.', 'polestar' ),
+		'description' => esc_html__( 'Display the post categories on blog, archive and single post pages. Select where with Post Categories Location.', 'polestar' ),
 		'default'     => true,
+	);
+
+	$options['post_categories_location'] = array(
+		'id'          => 'post_categories_location',
+		'label'       => esc_html__( 'Post Categories Location', 'polestar' ),
+		'section'     => $section,
+		'type'        => 'select',
+		'choices'     => array(
+			'thumbnail' => esc_html__( 'On Featured Image', 'polestar' ),
+			'meta'      => esc_html__( 'In Post Meta', 'polestar' ),
+		),
+		'description' => esc_html__( 'Select where to display the post categories. Posts without a featured image display them in the post meta.', 'polestar' ),
+		'default'     => 'thumbnail',
 	);
 
 	$options['post_comment_count'] = array(
@@ -423,7 +436,7 @@ function polestar_theme_options() {
 		'label'       => esc_html__( 'Footer Text', 'polestar' ),
 		'section'     => $section,
 		'type'        => 'text',
-		'description' => esc_html__( '{site-title} and {year} can be used to display your website title and the current year.', 'polestar' ),
+		'description' => esc_html__( '{sitename} and {year} can be used to display your website title and the current year.', 'polestar' ),
 		'default'     => esc_html__( 'Copyright &copy; {year} {sitename}.', 'polestar' ),
 		'priority'    => '20',
 	);

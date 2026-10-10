@@ -157,8 +157,8 @@ function polestar_footer_text() {
 	$text = get_theme_mod( 'footer_text', esc_html__( 'Copyright &copy; {year} {sitename}', 'polestar' ) );
 	if ( empty( $text ) ) return;
 	$text = str_replace(
-		array( '{sitename}', '{year}' ),
-		array( get_bloginfo( 'sitename' ), date_i18n( esc_html__( 'Y', 'polestar' ) ) ),
+		array( '{sitename}', '{site-title}', '{year}' ),
+		array( get_bloginfo( 'name' ), get_bloginfo( 'name' ), date_i18n( esc_html__( 'Y', 'polestar' ) ) ),
 		'<span>' . $text . '</span>'
 	);
 	echo wp_kses_post( $text );
@@ -510,16 +510,19 @@ if ( ! function_exists( 'polestar_excerpt' ) ) :
  * Outputs the excerpt.
  */
 function polestar_excerpt() {
-	if ( ( get_theme_mod( 'archive_post_content' ) == 'excerpt' ) && get_theme_mod( 'excerpt_more', true ) && ! is_search() ) {
+	if ( ( get_theme_mod( 'archive_post_content', 'full' ) == 'excerpt' ) && get_theme_mod( 'excerpt_more', true ) && ! is_search() ) {
 		$read_more_text = get_theme_mod( 'read_more_text', esc_html__( 'Continue reading', 'polestar' ) );
 		$read_more_text = the_title( '<span class="screen-reader-text">"', '"</span>', false ) . '<span class="more-wrapper"><a href="' . esc_url( get_permalink() ) . '">' . $read_more_text . ' <span class="icon-long-arrow-right"></span></a></span>';
 	} else {
 		$read_more_text = '';
 	}
 
-	$length = ! empty( get_theme_mod( 'excerpt_length' ) ) ? get_theme_mod( 'excerpt_length' ) : 55;
+	$length = ! empty( get_theme_mod( 'excerpt_length' ) ) ? (int) get_theme_mod( 'excerpt_length' ) : 55;
 	$excerpt = get_the_excerpt();
-	$excerpt_add_read_more = str_word_count( $excerpt ) >= $length;
+	// Split on whitespace the same way wp_trim_words() splits words so the count
+	// matches how the excerpt was trimmed - numeric tokens like dates count too.
+	$excerpt_words = preg_split( '/[\n\r\t ]+/', trim( wp_strip_all_tags( $excerpt ) ), $length + 1, PREG_SPLIT_NO_EMPTY );
+	$excerpt_add_read_more = count( $excerpt_words ) >= $length;
 
 	if ( ! has_excerpt() ) {
 		$excerpt = '<p>' . wp_trim_words( $excerpt, $length, '...' ) . '</p>';
@@ -535,9 +538,17 @@ endif;
 
 if ( ! function_exists( 'polestar_post_meta' ) ) :
 /**
- * Print HTML with meta information for the sticky status, current post-date/time, author, comment count and post categories.
+ * Print HTML with meta information for the sticky status, current post-date/time, author, post categories and comment count.
+ *
+ * @param bool|null $thumbnail Whether the featured image displays. If false, the post categories and Sticky label display in the post meta. If null, they do not display.
  */
-function polestar_post_meta() {
+function polestar_post_meta( $thumbnail = null ) {
+	$thumbnail_meta = ! is_null( $thumbnail ) && get_theme_mod( 'post_categories', true );
+
+	if ( $thumbnail_meta && ! $thumbnail && is_sticky() && is_home() && ! is_paged() ) {
+		echo '<span class="sticky-label">' . esc_html__( 'Sticky', 'polestar' ) . '</span>';
+	}
+
 	if ( ( is_home() || is_archive() || is_search() ) && get_theme_mod( 'post_date', true ) ) {
 		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
 	}
@@ -548,6 +559,10 @@ function polestar_post_meta() {
 
 	if ( get_theme_mod( 'post_author', true ) ) {
 		echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a></span></span>';
+	}
+
+	if ( $thumbnail_meta && ( ! $thumbnail || get_theme_mod( 'post_categories_location', 'thumbnail' ) == 'meta' ) && has_category() ) {
+		echo '<span class="cat-links">' . wp_kses_post( get_the_category_list( ', ' ) ) . '</span>';
 	}
 
 	if ( comments_open() && get_theme_mod( 'post_comment_count', true ) ) { 
@@ -567,8 +582,8 @@ function polestar_entry_thumbnail_meta() {
 	if ( is_sticky() && is_home() && ! is_paged() ) {
 		echo '<ul><li>' . esc_html__( 'Sticky', 'polestar' ) . '</li></ul>';
 	}
-	if ( has_category() ) {
-		echo get_the_category_list();
+	if ( has_category() && get_theme_mod( 'post_categories_location', 'thumbnail' ) != 'meta' ) {
+		echo wp_kses_post( get_the_category_list() );
 	}
 	echo '</div>';
 }
