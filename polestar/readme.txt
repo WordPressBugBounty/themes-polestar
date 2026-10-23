@@ -4,7 +4,7 @@ Contributors: Puro
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Tested up to: 6.7
+Tested up to: 7.1
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -151,6 +151,21 @@ Released under [GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0
 [Source](https://github.com/TGMPA/TGM-Plugin-Activation)
 
 == Changelog ==
+
+= 1.11.0 - 09 October 2026 =
+* Post Categories: Added a Post Categories Location setting to display the categories on the featured image or in the post meta.
+* Post Categories: Posts without a featured image now display their categories and the Sticky label in the post meta.
+* Post Categories: Improved escaping of the category list.
+* Footer Text: Fixed the `{sitename}` tag so it displays the site title.
+* Excerpts: Fixed the Read More link when the excerpt contains numbers or dates.
+* Archive Post Content: The default now applies before the setting is saved.
+* WooCommerce: The Product Gallery default now applies before the setting is saved.
+* Home Layout: Replaced the Livemesh Testimonials widget with the SiteOrigin Testimonials Widget.
+* Social Menu: Added an icon for x.com links.
+* Updated Tested up to tags.
+
+= 1.10.4 - 14 July 2025 =
+* WooCommerce: Fixed duplicate store notice display.
 
 = 1.10.3 - 13 April 2025 =
 * WooCommerce: Removed Single Product Review template to streamline customization.

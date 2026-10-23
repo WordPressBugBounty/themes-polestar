@@ -32,14 +32,22 @@ function polestar_woocommerce_change_hooks() {
 	add_action( 'polestar_woocommerce_quick_view_title', 'woocommerce_template_single_rating', 15 );
 	add_action( 'polestar_woocommerce_quick_view_content', 'woocommerce_template_single_price', 10 );
 	add_action( 'polestar_woocommerce_quick_view_content', 'woocommerce_template_single_excerpt', 15 );
-	add_action( 'polestar_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );	
-
-	// Remove store notice hook.
-	remove_action( 'wp_footer', 'woocommerce_demo_store' );
+	add_action( 'polestar_woocommerce_quick_view_content', 'woocommerce_template_single_add_to_cart', 20 );
 
 }
 endif;
 add_action( 'after_setup_theme', 'polestar_woocommerce_change_hooks' );
+
+if ( ! function_exists( 'polestar_remove_duplicate_store_notice' ) ) :
+/**
+ * Remove duplicate store notice with high priority.
+ */
+function polestar_remove_duplicate_store_notice() {
+	remove_action( 'wp_body_open', 'woocommerce_demo_store' );
+	remove_action( 'wp_footer', 'woocommerce_demo_store' );
+}
+endif;
+add_action( 'init', 'polestar_remove_duplicate_store_notice', 100 );
 
 /**
  * Output the store notification.

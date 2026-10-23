@@ -4,8 +4,8 @@ Author: Puro
 Author URI: https://purothemes.com/
 Theme URI: https://purothemes.com/themes/polestar/
 Description: Lead the way with Polestar. It's fast loading, responsive, lightweight and flexible design is perfectly suited for building dynamic pages with SiteOrigin's Page Builder and selling with WooCommerce. Ecommerce features include a menu mini-cart and product quick-view. Polestar features a sticky header, beautiful header search, scroll to top and just the right amount of Customizer theme settings. Page level settings let you adjust the theme layout on a page by page basis, perfect for landing pages. If you run a blog, Polestar is ready with awesome features including a full-width posts slider integrated with Jetpack Featured Content, an author box and related posts section. For assistance, check out our <a href="http://purothemes.com/documentation/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="https://purothemes.com/support/">support forum</a> (https://purothemes.com/support/).
-Version: 1.10.3
-Tested up to: 6.7
+Version: 1.11.0
+Tested up to: 7.1
 Requires at least: 4.7
 Requires PHP: 5.6.20
 License: GNU General Public License v2 or later
@@ -494,14 +494,14 @@ input[type="submit"] {
   input[type="submit"]:focus {
     color: #fff;
     outline: none; }
-  .button[disabled], .pagination [disabled].page-numbers, #infinite-handle span button[disabled],
+  .button[disabled], .pagination .page-numbers[disabled], #infinite-handle span button[disabled],
   button[disabled],
   .added_to_cart[disabled],
   input[type="button"][disabled],
   input[type="reset"][disabled],
   input[type="submit"][disabled] {
     opacity: 0.6; }
-    .button[disabled]:hover, .pagination [disabled].page-numbers:hover, #infinite-handle span button[disabled]:hover,
+    .button[disabled]:hover, .pagination .page-numbers[disabled]:hover, #infinite-handle span button[disabled]:hover,
     button[disabled]:hover,
     .added_to_cart[disabled]:hover,
     input[type="button"][disabled]:hover,
@@ -1097,12 +1097,12 @@ a {
 /*--------------------------------------------------------------
 ## Footer Menu Social Icons
 --------------------------------------------------------------*/
-.footer-menu a[href*="behance.net"], .footer-menu a[href*="codepen.io"], .footer-menu a[href*="delicious.com"], .footer-menu a[href*="deviantart.com"], .footer-menu a[href*="digg.com"], .footer-menu a[href*="dribbble.com"], .footer-menu a[href*="facebook.com"], .footer-menu a[href*="flickr.com"], .footer-menu a[href*="foursquare.com"], .footer-menu a[href*="github.com"], .footer-menu a[href*="plus.google.com"], .footer-menu a[href*="instagram.com"], .footer-menu a[href*="linkedin.com"], .footer-menu a[href*="mastodon.social"], .footer-menu a[href*="pinterest.com"], .footer-menu a[href*="reddit.com"], .footer-menu a[href*="soundcloud.com"], .footer-menu a[href*="stackexchange.com"], .footer-menu a[href*="stackoverflow.com"], .footer-menu a[href*="tumblr.com"], .footer-menu a[href*="twitter.com"], .footer-menu a[href*="vimeo.com"], .footer-menu a[href*="vine.co"], .footer-menu a[href*="vk.com"], .footer-menu a[href*="weibo.com"], .footer-menu a[href*="wordpress.com"], .footer-menu a[href*="xing"], .footer-menu a[href*="yelp"], .footer-menu a[href*="youtube.com"] {
+.footer-menu a[href*="behance.net"], .footer-menu a[href*="codepen.io"], .footer-menu a[href*="delicious.com"], .footer-menu a[href*="deviantart.com"], .footer-menu a[href*="digg.com"], .footer-menu a[href*="dribbble.com"], .footer-menu a[href*="facebook.com"], .footer-menu a[href*="flickr.com"], .footer-menu a[href*="foursquare.com"], .footer-menu a[href*="github.com"], .footer-menu a[href*="plus.google.com"], .footer-menu a[href*="instagram.com"], .footer-menu a[href*="linkedin.com"], .footer-menu a[href*="mastodon.social"], .footer-menu a[href*="pinterest.com"], .footer-menu a[href*="reddit.com"], .footer-menu a[href*="soundcloud.com"], .footer-menu a[href*="stackexchange.com"], .footer-menu a[href*="stackoverflow.com"], .footer-menu a[href*="tumblr.com"], .footer-menu a[href*="twitter.com"], .footer-menu a[href*="//x.com/"], .footer-menu a[href*="//www.x.com/"], .footer-menu a[href*="vimeo.com"], .footer-menu a[href*="vine.co"], .footer-menu a[href*="vk.com"], .footer-menu a[href*="weibo.com"], .footer-menu a[href*="wordpress.com"], .footer-menu a[href*="xing"], .footer-menu a[href*="yelp"], .footer-menu a[href*="youtube.com"] {
   display: block;
   font-size: 0;
   margin-right: -16px;
   text-align: center; }
-  .footer-menu a[href*="behance.net"]:before, .footer-menu a[href*="codepen.io"]:before, .footer-menu a[href*="delicious.com"]:before, .footer-menu a[href*="deviantart.com"]:before, .footer-menu a[href*="digg.com"]:before, .footer-menu a[href*="dribbble.com"]:before, .footer-menu a[href*="facebook.com"]:before, .footer-menu a[href*="flickr.com"]:before, .footer-menu a[href*="foursquare.com"]:before, .footer-menu a[href*="github.com"]:before, .footer-menu a[href*="plus.google.com"]:before, .footer-menu a[href*="instagram.com"]:before, .footer-menu a[href*="linkedin.com"]:before, .footer-menu a[href*="mastodon.social"]:before, .footer-menu a[href*="pinterest.com"]:before, .footer-menu a[href*="reddit.com"]:before, .footer-menu a[href*="soundcloud.com"]:before, .footer-menu a[href*="stackexchange.com"]:before, .footer-menu a[href*="stackoverflow.com"]:before, .footer-menu a[href*="tumblr.com"]:before, .footer-menu a[href*="twitter.com"]:before, .footer-menu a[href*="vimeo.com"]:before, .footer-menu a[href*="vine.co"]:before, .footer-menu a[href*="vk.com"]:before, .footer-menu a[href*="weibo.com"]:before, .footer-menu a[href*="wordpress.com"]:before, .footer-menu a[href*="xing"]:before, .footer-menu a[href*="yelp"]:before, .footer-menu a[href*="youtube.com"]:before {
+  .footer-menu a[href*="behance.net"]:before, .footer-menu a[href*="codepen.io"]:before, .footer-menu a[href*="delicious.com"]:before, .footer-menu a[href*="deviantart.com"]:before, .footer-menu a[href*="digg.com"]:before, .footer-menu a[href*="dribbble.com"]:before, .footer-menu a[href*="facebook.com"]:before, .footer-menu a[href*="flickr.com"]:before, .footer-menu a[href*="foursquare.com"]:before, .footer-menu a[href*="github.com"]:before, .footer-menu a[href*="plus.google.com"]:before, .footer-menu a[href*="instagram.com"]:before, .footer-menu a[href*="linkedin.com"]:before, .footer-menu a[href*="mastodon.social"]:before, .footer-menu a[href*="pinterest.com"]:before, .footer-menu a[href*="reddit.com"]:before, .footer-menu a[href*="soundcloud.com"]:before, .footer-menu a[href*="stackexchange.com"]:before, .footer-menu a[href*="stackoverflow.com"]:before, .footer-menu a[href*="tumblr.com"]:before, .footer-menu a[href*="twitter.com"]:before, .footer-menu a[href*="//x.com/"]:before, .footer-menu a[href*="//www.x.com/"]:before, .footer-menu a[href*="vimeo.com"]:before, .footer-menu a[href*="vine.co"]:before, .footer-menu a[href*="vk.com"]:before, .footer-menu a[href*="weibo.com"]:before, .footer-menu a[href*="wordpress.com"]:before, .footer-menu a[href*="xing"]:before, .footer-menu a[href*="yelp"]:before, .footer-menu a[href*="youtube.com"]:before {
     font-family: "polestar-icons";
     font-size: 18px;
     transition: .2s; }
@@ -1167,7 +1167,7 @@ a {
 .footer-menu a[href*="tumblr.com"]:before {
   content: "\f173"; }
 
-.footer-menu a[href*="twitter.com"]:before {
+.footer-menu a[href*="twitter.com"]:before, .footer-menu a[href*="//x.com/"]:before, .footer-menu a[href*="//www.x.com/"]:before {
   content: "\f099"; }
 
 .footer-menu a[href*="vimeo.com"]:before {
@@ -1469,17 +1469,17 @@ a {
       color: #4d8ffb; }
   .widget-area .widget .button, .widget-area .widget .pagination .page-numbers, .pagination .widget-area .widget .page-numbers, .widget-area .widget #infinite-handle span button, #infinite-handle span .widget-area .widget button,
   .site-footer .widget .button,
-  .site-footer .widget .pagination .page-numbers, .pagination
-  .site-footer .widget .page-numbers,
-  .site-footer .widget #infinite-handle span button, #infinite-handle span
-  .site-footer .widget button {
+  .site-footer .widget .pagination .page-numbers,
+  .pagination .site-footer .widget .page-numbers,
+  .site-footer .widget #infinite-handle span button,
+  #infinite-handle span .site-footer .widget button {
     color: #fff; }
     .widget-area .widget .button:hover, .widget-area .widget .pagination .page-numbers:hover, .pagination .widget-area .widget .page-numbers:hover, .widget-area .widget #infinite-handle span button:hover, #infinite-handle span .widget-area .widget button:hover,
     .site-footer .widget .button:hover,
-    .site-footer .widget .pagination .page-numbers:hover, .pagination
-    .site-footer .widget .page-numbers:hover,
-    .site-footer .widget #infinite-handle span button:hover, #infinite-handle span
-    .site-footer .widget button:hover {
+    .site-footer .widget .pagination .page-numbers:hover,
+    .pagination .site-footer .widget .page-numbers:hover,
+    .site-footer .widget #infinite-handle span button:hover,
+    #infinite-handle span .site-footer .widget button:hover {
       color: #fff; }
   .widget-area .widget ul,
   .site-footer .widget ul {

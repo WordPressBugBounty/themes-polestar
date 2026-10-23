@@ -20,11 +20,11 @@ function polestar_woocommerce_setup() {
 	 */
 	add_theme_support( 'wc-product-gallery-slider' );
 
-	if ( get_theme_mod( 'product_gallery' ) == 'slider_lightbox' ) {
+	if ( get_theme_mod( 'product_gallery', 'slider_lightbox' ) == 'slider_lightbox' ) {
 		add_theme_support( 'wc-product-gallery-lightbox' );
-	} elseif ( get_theme_mod( 'product_gallery' ) == 'slider_zoom' ) {
+	} elseif ( get_theme_mod( 'product_gallery', 'slider_lightbox' ) == 'slider_zoom' ) {
 		add_theme_support( 'wc-product-gallery-zoom' );
-	} elseif ( get_theme_mod( 'product_gallery' ) == 'slider_lightbox_zoom' ) {
+	} elseif ( get_theme_mod( 'product_gallery', 'slider_lightbox' ) == 'slider_lightbox_zoom' ) {
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-zoom' );
 	}

@@ -8,16 +8,17 @@
  * @license GPL 2.0 
  */
 
+$thumbnail = has_post_thumbnail() && get_theme_mod( is_single() ? 'post_featured_image' : 'archive_featured_image', true );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php 
-	if ( is_single() && has_post_thumbnail() && get_theme_mod( 'post_featured_image', true ) ) : ?>
+	if ( is_single() && $thumbnail ) : ?>
 		<div class="entry-thumbnail">
 			<?php if ( get_theme_mod( 'post_categories', true ) ) polestar_entry_thumbnail_meta(); ?>
 			<?php the_post_thumbnail(); ?>
 		</div>
-	<?php elseif ( ! is_single() && has_post_thumbnail() && get_theme_mod( 'archive_featured_image', true ) ) : ?>
+	<?php elseif ( ! is_single() && $thumbnail ) : ?>
 		<div class="entry-thumbnail">
 			<?php if ( get_theme_mod( 'post_categories', true ) ) polestar_entry_thumbnail_meta(); ?>
 			<a href="<?php the_permalink(); ?>">
@@ -43,14 +44,14 @@
 		<?php 
 			if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php polestar_post_meta(); ?>
+				<?php polestar_post_meta( $thumbnail ); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->	
 
 	<div class="entry-content">
 		<?php
-			if ( is_single() || get_theme_mod( 'archive_post_content' ) == 'full' ) {
+			if ( is_single() || get_theme_mod( 'archive_post_content', 'full' ) == 'full' ) {
 				the_content();
 			} else {
 				polestar_excerpt();

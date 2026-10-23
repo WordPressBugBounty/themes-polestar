@@ -54,12 +54,12 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<?php endif; ?>
 		<div class="entry-meta">
-			<?php polestar_post_meta(); ?>
+			<?php polestar_post_meta( false ); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php if ( is_single() || get_theme_mod( 'archive_post_content' ) == 'full' ) {
+		<?php if ( is_single() || get_theme_mod( 'archive_post_content', 'full' ) == 'full' ) {
 			echo $content;
 		} else {
 			polestar_excerpt();

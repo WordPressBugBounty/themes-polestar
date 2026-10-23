@@ -39,7 +39,7 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php polestar_post_meta(); ?>
+			<?php polestar_post_meta( false ); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -47,7 +47,7 @@ $post_class = ( is_singular() ) ? 'entry' : 'archive-entry';
 
 	<div class="entry-content">
 		<?php
-			if ( is_single() || get_theme_mod( 'archive_post_content' ) == 'full' ) {
+			if ( is_single() || get_theme_mod( 'archive_post_content', 'full' ) == 'full' ) {
 				echo apply_filters( 'the_content', polestar_strip_video( get_the_content() ) );
 			} else {
 				polestar_excerpt();
